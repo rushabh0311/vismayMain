@@ -2,54 +2,58 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import classes from "./index.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import HBMobileLogo from "@/public/HBMobileLogo.svg";
-import { AnimatePresence, motion } from "framer-motion";
+import HBMobileLogo from "@/public/HBMobileLogo.svg"; // Assuming this is in 'public' folder
+import {
+  HomeIcon,
+  PhotoIcon,
+  UsersIcon,
+  TrophyIcon,
+  CalendarDaysIcon,
+  UserGroupIcon,
+  QuestionMarkCircleIcon,
+  EnvelopeIcon,
+} from "@heroicons/react/24/outline";
 
 const navigationItems = [
-  { label: "Home", href: "/" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Partners", href: "/partners" },
-  { label: "Prizes", href: "/prizes" },
-  { label: "Schedule", href: "/schedule" },
-  { label: "Humans", href: "/humans" },
-  { label: "FAQs", href: "/faq" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", href: "/", icon: HomeIcon },
+  { label: "Gallery", href: "/gallery", icon: PhotoIcon },
+  { label: "Partners", href: "/partners", icon: UsersIcon },
+  { label: "Schedule", href: "/schedule", icon: CalendarDaysIcon },
+  { label: "Humans", href: "/humans", icon: UserGroupIcon },
+  { label: "FAQs", href: "/faq", icon: QuestionMarkCircleIcon },
+  { label: "Contact", href: "/contact", icon: EnvelopeIcon },
 ];
 
-const NavItem = ({ label, href }) => {
+const NavItem = ({ label, href, icon: Icon, isExpanded }) => {
   const pathname = usePathname();
 
   return (
-    <div
-      className={`group relative text-[#9A9A9A] font-[600] px-6 py-2 
-      rounded-full transition-all ease-in-out focus-visible:outline-2 ${
-        pathname === href ? "" : "hover:bg-[#FFFFFF10]"
-      }`}
-    >
-      <AnimatePresence initial={false} mode="wait">
-        {pathname === href && (
-          <motion.span
-            layoutId="bubble"
-            className="absolute inset-0 z-10 bg-[#FFFFFF1A]  mix-blend-difference"
-            style={{ borderRadius: 9999 }}
-            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            key={label}
-          />
+    <Link href={href} className="w-full">
+      <div
+        className={`group relative flex items-center gap-4 p-3 rounded-2xl 
+          transition-all duration-300 ease-in-out
+          ${pathname === href
+            ? "bg-gradient-to-r from-[#ffffff1c] to-[#ffffff0a] text-white shadow-md"
+            : "hover:bg-gradient-to-r hover:from-[#ffffff14] hover:to-[#ffffff0a] text-[#9A9A9A]"}`}
+        style={{
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+        }}
+      >
+        <Icon className="w-7 h-7 text-white" />
+        {isExpanded && (
+          <p className="whitespace-nowrap text-lg font-semibold">{label}</p>
         )}
-      </AnimatePresence>
-      <Link href={href}>
-        <p className="text-lg md:text-base lg:text-lg text-center">{label}</p>
-      </Link>
-      <div className="mx-2"></div>
-    </div>
+      </div>
+    </Link>
   );
 };
 
 export default function Navbar() {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -61,60 +65,81 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="absolute sm:z-[2] w-full flex items-center xl:justify-center px-4 pt-8">
+      {/* Sidebar (Desktop) */}
+      <nav className="fixed top-0 left-0 h-screen z-50 flex flex-col items-center xl:justify-start px-4 pt-8 bg-transparent">
+        {/* Mobile Logo */}
         <Image
           src={HBMobileLogo}
           alt="Hackathon-Mobile-Logo"
-          className="md:hidden"
-          width={"6rem"}
-          height={"3rem"}
+          className="md:hidden mb-4"
+          width={96}
+          height={48}
           priority
         />
-        <div
-          className="hidden h-10 xl:flex xl:justify-center xl:items-center 
-            px-3 py-8 rounded-full border-2 border-solid border-gray-800 
-            bg-opacity-60 backdrop-blur-xl space-x-2"
-        >
-          {navigationItems.map(({ label, href }) => (
-            <NavItem key={label} label={label} href={href} />
-          ))}
-        </div>
-        <a
-          id="mlh-trust-badge"
-          className="block absolute top-0 w-[10%] z-10000 max-w-[65px] min-w-[60px] 
-            right-[100px] md:right-[120px] xl:right-[80px]"
-          href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=white"
-          target="_blank"
-        >
-          <img
-            src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-white.svg"
-            alt="Major League Hacking 2024 Hackathon Season"
-            className="w-full hover:scale-110 transition-all duration-300 ease-in-out"
-          />
-        </a>
 
-        <div className="flex items-center justify-end w-full xl:hidden">
-          <button
-            id="menu-btn"
-            aria-label="Toggle Menu"
-            type="button"
-            className={`z-40 hamburger xl:hidden focus:outline-none ${
-              isMenuOpen ? classes.open : ""
-            } ${classes.hamburger}`}
-            onClick={() => setMenuOpen(!isMenuOpen)}
-          >
-            <span className={classes.hamburgerTop}></span>
-            <span className={classes.hamburgerMiddle}></span>
-            <span className={classes.hamburgerBottom}></span>
-          </button>
+        {/* Desktop Sidebar */}
+        <div
+          onMouseEnter={() => setIsExpanded(true)}
+          onMouseLeave={() => setIsExpanded(false)}
+          className="hidden xl:flex flex-col justify-start 
+            px-3 py-6 rounded-[2rem] border-2 border-gray-800 
+            bg-opacity-60 backdrop-blur-xl space-y-4 transition-all duration-300 
+            bg-[#0e0e0e80]"
+          style={{
+            width: isExpanded ? "200px" : "70px", // Reduced width
+            height: "calc(86vh - 4rem)", // Adjust height for padding
+            marginTop: "2rem",
+          }}
+        >
+          {navigationItems.map(({ label, href, icon }) => (
+            <NavItem
+              key={label}
+              label={label}
+              href={href}
+              icon={icon}
+              isExpanded={isExpanded}
+            />
+          ))}
         </div>
       </nav>
 
+      {/* MLH Badge (OUTSIDE nav) */}
+      <a
+        id="mlh-trust-badge"
+        className="fixed top-6 right-6 z-50 w-[65px] min-w-[60px]"
+        href="https://www.gmcmiraj.edu.in/"
+        target="_blank"
+      >
+        <Image
+          src="/gmc miraj logo.png" // Public folder image
+          alt="Major League Hacking 2024 Hackathon Season"
+          width={100}
+          height={50}
+          className="w-full hover:scale-110 transition-all duration-300 ease-in-out"
+        />
+      </a>
+
+      {/* Mobile Hamburger */}
+      <div className="fixed top-6 right-6 xl:hidden flex items-center justify-end z-50">
+        <button
+          id="menu-btn"
+          aria-label="Toggle Menu"
+          type="button"
+          className="flex flex-col items-center justify-center space-y-1.5 
+            w-10 h-10 border border-gray-700 rounded-full focus:outline-none"
+          onClick={() => setMenuOpen(!isMenuOpen)}
+        >
+          <span className="block w-6 h-0.5 bg-white"></span>
+          <span className="block w-6 h-0.5 bg-white"></span>
+          <span className="block w-4 h-0.5 bg-white"></span>
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
       <div
         id="menu"
-        className={`absolute z-[1] top-0 bottom-0 left-0 ${
-          isMenuOpen ? "block" : "hidden"
-        } w-full min-h-screen py-1 pt-40 px-8 backdrop-blur-lg`}
+        className={`fixed inset-0 z-40 min-h-screen py-1 pt-16 px-8 backdrop-blur-lg transition-all duration-300 bg-[#090909cc] 
+          ${isMenuOpen ? "block" : "hidden"}`}
       >
         <div
           className="flex flex-col self-end space-y-8 text-lg text-[#9d9d9d] 

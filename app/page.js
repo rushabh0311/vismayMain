@@ -11,7 +11,6 @@ import {
 } from "@radix-ui/react-icons";
 import Link from "next/link";
 import StatisticCard from "@/components/StatisticCard";
-import NewsLetter from "@/components/NewsLetter";
 
 import FooterAnimation from "@/components/FooterAnimation";
 import Footer from "@/components/Footer";
@@ -248,79 +247,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div
-        className="bg-[#EBB323] w-full h-full flex flex-col md:flex-row justify-between 
-          items-center px-4 md:px-8 xl:px-36 pt-10 pb-28 lg:pb-48 xl:pb-40"
-      >
-        <div className="flex flex-col justify-center items-center max-w-lg">
-          <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-4">
-              <p
-                className=" text-black text-4xl lg:text-5xl font-medium 
-                  leading-[2.75rem] tracking-tighter"
-              >
-                Join our mailing list!
-              </p>
-              <p
-                className="max-w-[30rem] text-black text-base md:text-sm lg:text-lg 
-                font-normal font-['Inter'] leading-6 sm:leading-7 tracking-tight"
-              >
-                To stay up-to-date with HackByte 3.0, consider subscribing to
-                our mailing list. Helps us share important updates right away
-                with hackers and enthusiasts alike !
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-5 sm:pl-4">
-              <div className="flex gap-3 sm:gap-4 items-center">
-                <img
-                  className="w-7 h-7 md:w-5 md:h-5"
-                  src="/aboutPage/checkIcon.svg"
-                />
-                <p
-                  className=" text-black text-base md:text-sm lg:text-lg font-normal 
-                  font-['Inter'] leading-6 sm:leading-7 tracking-tight"
-                >
-                  Get updates about your application status
-                </p>
-              </div>
-              <div className="flex gap-3 sm:gap-4 items-center">
-                <img
-                  className="w-7 h-7 md:w-5 md:h-5"
-                  src="/aboutPage/checkIcon.svg"
-                />
-                <p
-                  className=" text-black text-base md:text-sm lg:text-lg font-normal 
-                  font-['Inter'] leading-6 sm:leading-7 tracking-tight"
-                >
-                  Get notified for exciting events!
-                </p>
-              </div>
-              <div className="flex gap-3 sm:gap-4 items-center">
-                <img
-                  className="w-7 h-7 md:w-5 md:h-5"
-                  src="/aboutPage/checkIcon.svg"
-                />
-                <p
-                  className=" text-black text-base md:text-sm lg:text-lg font-normal 
-                  font-['Inter'] leading-6 sm:leading-7 tracking-tight"
-                >
-                  Be the first ones to register for HackByte 3.0
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-xl flex justify-center items-center mb-16 lg:mb-0">
-          <div className="max-w-md md:max-w-sm lg:max-w-md">
-            <img src="/aboutPage/about_img2.png" />
-          </div>
-        </div>
-      </div>
-
       <div className="relative bg-[#000000] w-full h-full flex flex-col justify-end pt-48 md:pt-60 lg:pt-80">
-        <NewsLetter />
         <div
           className="flex flex-col justify-between gap-20 md:flex-row 
             px-6 md:px-8 xl:px-20 py-20"
