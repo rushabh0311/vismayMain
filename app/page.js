@@ -247,24 +247,54 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="relative bg-[#000000] w-full h-full flex flex-col justify-end pt-48 md:pt-60 lg:pt-80">
-        <div
-          className="flex flex-col justify-between gap-20 md:flex-row 
-            px-6 md:px-8 xl:px-20 py-20"
-        >
-          <p
-            className="max-w-3xl text-6xl md:text-[5.5rem] lg:text-[7rem] xl:text-[9rem] 
-          text-white font-normal md:leading-[8rem] lg:leading-[10rem] 
-            tracking-tighter md:tracking-[-0.2rem]"
-          >
-            Empower
-            <br /> Your Digital
-            <br /> Odyssey!
-          </p>
+      <div className="relative bg-black w-full h-screen flex flex-col justify-end pt-48 md:pt-52 lg:pt-72">
+  <div className="flex flex-col md:flex-row justify-between items-center gap-16 md:gap-20 px-6 md:px-12 xl:px-24 py-20">
+    
+    <p className="max-w-4xl text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-extrabold leading-tight text-center md:text-left tracking-tight">
+      <span 
+        className="block bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]"
+        style={{
+          backgroundImage: "url('/mmm background.png')", // parchment image
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "brightness(1.4)", // Make parchment brighter
+          WebkitTextStroke: "1px #f5deb3", // Light wheat-colored stroke
+        }}
+      >
+        Myth
+      </span>
+      <span 
+        className="block bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]"
+        style={{
+          backgroundImage: "url('/mmm background.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "brightness(1.4)",
+          WebkitTextStroke: "1px #f5deb3",
+        }}
+      >
+        Maya
+      </span>
+      <span 
+        className="block bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]"
+        style={{
+          backgroundImage: "url('/mmm background.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "brightness(1.4)",
+          WebkitTextStroke: "1px #f5deb3",
+        }}
+      >
+        Mystery!
+      </span>
+    </p>
 
-          <FooterAnimation />
-        </div>
-      </div>
+    <FooterAnimation />
+
+  </div>
+</div>
+
+
       <Footer />
     </div>
   );
