@@ -220,15 +220,24 @@ If you're looking for an event that's full of energy, excitement, and entertainm
           </div>
         </div>
 
+<<<<<<< HEAD
         {/* EMPOWER Section */}
         <div className="relative bg-black w-full h-screen flex flex-col justify-end pt-48 md:pt-52 lg:pt-72">
         <div className="flex flex-col md:flex-row justify-between items-center gap-16 md:gap-20 px-6 md:px-12 xl:px-24 py-20">
+=======
+      <div className="relative bg-black w-full h-screen flex flex-col justify-end pt-48 md:pt-52 lg:pt-72">
+  <div className="flex flex-col md:flex-row justify-between items-center gap-16 md:gap-20 px-6 md:px-12 xl:px-24 py-20">
+>>>>>>> 56940ce3ce424147e2e18468ecadcd00d150155e
     
     <p className="max-w-4xl text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-extrabold leading-tight text-center md:text-left tracking-tight">
       <span 
         className="block bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]"
         style={{
+<<<<<<< HEAD
           backgroundImage: "url('/mmm background.jpg')", // parchment image
+=======
+          backgroundImage: "url('/mmm background.png')", // parchment image
+>>>>>>> 56940ce3ce424147e2e18468ecadcd00d150155e
           backgroundSize: "cover",
           backgroundPosition: "center",
           filter: "brightness(1.4)", // Make parchment brighter
@@ -240,7 +249,11 @@ If you're looking for an event that's full of energy, excitement, and entertainm
       <span 
         className="block bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]"
         style={{
+<<<<<<< HEAD
           backgroundImage: "url('/mmm background.jpg')",
+=======
+          backgroundImage: "url('/mmm background.png')",
+>>>>>>> 56940ce3ce424147e2e18468ecadcd00d150155e
           backgroundSize: "cover",
           backgroundPosition: "center",
           filter: "brightness(1.4)",
@@ -252,7 +265,11 @@ If you're looking for an event that's full of energy, excitement, and entertainm
       <span 
         className="block bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]"
         style={{
+<<<<<<< HEAD
           backgroundImage: "url('/mmm background.jpg')",
+=======
+          backgroundImage: "url('/mmm background.png')",
+>>>>>>> 56940ce3ce424147e2e18468ecadcd00d150155e
           backgroundSize: "cover",
           backgroundPosition: "center",
           filter: "brightness(1.4)",
@@ -262,6 +279,7 @@ If you're looking for an event that's full of energy, excitement, and entertainm
         Mystery!
       </span>
     </p>
+<<<<<<< HEAD
 
     <FooterAnimation />
 
@@ -270,6 +288,16 @@ If you're looking for an event that's full of energy, excitement, and entertainm
 
         <Footer />
       </div>
+=======
+
+    <FooterAnimation />
+
+  </div>
+</div>
+
+
+      <Footer />
+>>>>>>> 56940ce3ce424147e2e18468ecadcd00d150155e
     </div>
   );
 }
