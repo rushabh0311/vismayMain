@@ -39,7 +39,9 @@ export default function RootLayout({ children }) {
           `}
         </Script>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+      </body>
     </html>
   );
 }

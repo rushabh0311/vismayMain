@@ -21,22 +21,6 @@ import prajwal from "@/public/humansPage/prajwal.jpg";
 import manoj from "@/public/humansPage/manoj.jpeg";
 import nitya from "@/public/humansPage/nitya.jpg";
 
-// Mentors
-import aanchal from "@/public/humansPage/aanchal.jpeg";
-import khushi from "@/public/humansPage/khushi.jpg";
-import manan from "@/public/humansPage/manan.jpg";
-import priyansh_garg from "@/public/humansPage/priyansh_garg.jpeg";
-import akshat from "@/public/humansPage/akshat.jpg";
-import sanskriti from "@/public/humansPage/sanskriti.jpg";
-import yashika from "@/public/humansPage/yashika.jpeg";
-import sagar from "@/public/humansPage/sagar.jpg";
-import siddhant from "@/public/humansPage/siddhant.jpeg";
-import vedant from "@/public/humansPage/vedant.jpeg";
-import ashu from "@/public/humansPage/ashu.jpg";
-import ashish from "@/public/humansPage/ashish.jpg";
-import gautam from "@/public/humansPage/gautam.jpg";
-import chaitanya from "@/public/humansPage/chaitanaya.jpg";
-
 import FooterAnimation from "@/components/FooterAnimation";
 import Footer from "@/components/Footer";
 
@@ -199,107 +183,6 @@ export default function Team() {
     },
   ];
 
-  const mentorData = [
-    {
-      name: "Aanchal Mishra",
-      profilepic: aanchal,
-      linkedin: "https://www.linkedin.com/in/mishra-aanchal/",
-      twitter: "https://twitter.com/Aanchalmishra__",
-      github: "https://github.com/mishra-aanchal",
-    },
-    {
-      name: "Khushi Trivedi",
-      profilepic: khushi,
-      linkedin: "https://www.linkedin.com/in/trivedi-khushi/",
-      twitter: "https://twitter.com/KhushiT113/",
-      github: "https://github.com/trivedi-khushi",
-    },
-    {
-      name: "Manan Jethwani",
-      profilepic: manan,
-      linkedin: "https://www.linkedin.com/in/manan-jethwani/",
-      twitter: "https://twitter.com/manan_jethwani",
-      github: "https://github.com/mananjethwani",
-    },
-    {
-      name: "Priyansh Garg",
-      profilepic: priyansh_garg,
-      linkedin: "https://www.linkedin.com/in/priyansh3133/",
-      twitter: "https://twitter.com/priyansh3133",
-      github: "https://github.com/garg3133",
-    },
-    {
-      name: "Akshat Virmani",
-      profilepic: akshat,
-      linkedin: "https://www.linkedin.com/in/akshatvirmani/",
-      twitter: "https://twitter.com/VirmaniAkshat",
-      github: "https://github.com/akshatvirmani",
-    },
-    {
-      name: "Sanskriti Harmukh",
-      profilepic: sanskriti,
-      linkedin: "https://www.linkedin.com/in/sanskriti-harmukh/",
-      twitter: "https://x.com/Senzkriti",
-      github: "https://github.com/SanskritiHarmukh",
-    },
-    {
-      name: "Yashika Jotwani",
-      profilepic: yashika,
-      linkedin: "https://www.linkedin.com/in/yashika-jotwani-03a0061b7",
-      twitter: "https://twitter.com/yashika_jotwani",
-      github: "https://github.com/yashikajotwani12",
-    },
-    {
-      name: "Sagar Uprety",
-      profilepic: sagar,
-      linkedin: "https://www.linkedin.com/in/sagar-uprety/",
-      twitter: "https://twitter.com/SagarUprety9",
-      github: "https://github.com/sagar-uprety",
-    },
-    {
-      name: "Siddhant Khare",
-      profilepic: siddhant,
-      linkedin: "https://www.linkedin.com/in/siddhantkhare24/",
-      twitter: "https://twitter.com/Siddhant_K_code",
-      github: "https://github.com/Siddhant-K-code",
-    },
-    {
-      name: "Vedant Jain",
-      profilepic: vedant,
-      linkedin: "https://www.linkedin.com/in/vedant-jain-781006145",
-      twitter: "https://twitter.com/vedantj_03",
-      github: "https://vedant-jain03.github.io/portfolio/",
-    },
-    {
-      name: "Ashu Kumar",
-      profilepic: ashu,
-      linkedin: "https://www.linkedin.com/in/ashu-kr/",
-      twitter: "https://twitter.com/AshuKr40",
-      github: "https://github.com/Ashu-kumar40",
-    },
-    {
-      name: "Ashish Chanchal",
-      profilepic: ashish,
-      linkedin: "https://www.linkedin.com/in/ashishchanchal",
-      twitter: "https://x.com/_ashishchanchal",
-      github: "https://github.com/Ashish-chanchal",
-    },
-    {
-      name: "Gautam Manak",
-      profilepic: gautam,
-      linkedin: "https://www.linkedin.com/in/gautammanak1/",
-      twitter: "https://twitter.com/gautammanak02",
-      github: "https://github.com/GAUTAMMANAK1",
-    },
-    {
-      name: "Chaitanya Rai",
-      profilepic: chaitanya,
-      linkedin: "https://www.linkedin.com/in/chaitanya-rai/",
-      twitter: "https://twitter.com/Chaitanyarai19",
-      github: "https://github.com/chaitanyarai19/",
-    },
-  ];
-
   return (
     <>
       <Navbar />
@@ -325,23 +208,16 @@ export default function Team() {
                 md:text-[4rem] xl:text-[5rem] md:leading-[4.5rem] xl:leading-[5.25rem]"
             >
               Meet the humans of
-              <br /> Hackbyte 2.0
+              <br /> Vismay
             </p>
           </div>
         </div>
 
         <Tabs
-          defaultValue="Mentors"
+          defaultValue="Organizers" // Set default to Organizers
           className="flex flex-col justify-center items-center text-white mt-4 md:mt-12"
         >
           <TabsList className="mb-8 md:mb-16 w-[19rem] min-w-[321px]:w-80 sm:w-[488px]">
-            <TabsTrigger
-              value="Mentors"
-              className="sm:p-4 p-2 sm:w-60 w-40 min-[300px]:text-lg sm:text-2xl 
-                text-xl leading-7"
-            >
-              Mentors
-            </TabsTrigger>
             <TabsTrigger
               value="Organizers"
               className="sm:p-4 p-2 sm:w-60 w-40 min-[300px]:text-lg sm:text-2xl 
@@ -355,9 +231,6 @@ export default function Team() {
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 
                 place-content-center place-items-center gap-10"
             >
-              {mentorData.map((human, index) => (
-                <HumansCard key={index} index={index} {...human} />
-              ))}
             </div>
           </TabsContent>
           <TabsContent value="Organizers">
@@ -366,7 +239,7 @@ export default function Team() {
                 place-content-center place-items-center gap-10"
             >
               {organizerData.map((human, index) => (
-                <HumansCard key={index} index={index} {...human} />
+                <HumansCard key={index} {...human} />
               ))}
             </div>
           </TabsContent>

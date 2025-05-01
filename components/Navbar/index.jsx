@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import HBMobileLogo from "@/public/HBMobileLogo.svg"; // Assuming this is in 'public' folder
 import {
   HomeIcon,
   PhotoIcon,
@@ -21,9 +20,8 @@ const navigationItems = [
   { label: "Gallery", href: "/gallery", icon: PhotoIcon },
   { label: "Partners", href: "/partners", icon: UsersIcon },
   { label: "Schedule", href: "/schedule", icon: CalendarDaysIcon },
-  { label: "Humans", href: "/humans", icon: UserGroupIcon },
-  { label: "FAQs", href: "/faq", icon: QuestionMarkCircleIcon },
-  { label: "Contact", href: "/contact", icon: EnvelopeIcon },
+  { label: "Our Team", href: "/humans", icon: UserGroupIcon },
+    { label: "Contact", href: "/contact", icon: EnvelopeIcon },
 ];
 
 const NavItem = ({ label, href, icon: Icon, isExpanded }) => {
@@ -67,16 +65,6 @@ export default function Navbar() {
     <>
       {/* Sidebar (Desktop) */}
       <nav className="fixed top-0 left-0 h-screen z-50 flex flex-col items-center xl:justify-start px-4 pt-8 bg-transparent">
-        {/* Mobile Logo */}
-        <Image
-          src={HBMobileLogo}
-          alt="Hackathon-Mobile-Logo"
-          className="md:hidden mb-4"
-          width={96}
-          height={48}
-          priority
-        />
-
         {/* Desktop Sidebar */}
         <div
           onMouseEnter={() => setIsExpanded(true)}
@@ -87,8 +75,8 @@ export default function Navbar() {
             bg-[#0e0e0e80]"
           style={{
             width: isExpanded ? "200px" : "70px", // Reduced width
-            height: "calc(86vh - 4rem)", // Adjust height for padding
-            marginTop: "2rem",
+            height: "430px", // Adjust height for padding
+            marginTop: "7rem",
           }}
         >
           {navigationItems.map(({ label, href, icon }) => (
@@ -103,21 +91,20 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* MLH Badge (OUTSIDE nav) */}
       <a
-        id="mlh-trust-badge"
-        className="fixed top-6 right-6 z-50 w-[65px] min-w-[60px]"
-        href="https://www.gmcmiraj.edu.in/"
-        target="_blank"
-      >
-        <Image
-          src="/gmc miraj logo.png" // Public folder image
-          alt="Major League Hacking 2024 Hackathon Season"
-          width={100}
-          height={50}
-          className="w-full hover:scale-110 transition-all duration-300 ease-in-out"
-        />
-      </a>
+      id="GMC-Miraj"
+      className="fixed top-6 right-6 z-50 w-[120px] min-w-[100px]"  // <-- Increased width
+      href="https://www.gmcmiraj.edu.in/"
+      target="_blank"
+     >
+      <Image
+        src="/gmc miraj logo.png"
+        alt="vismay logo"
+        width={160} // <-- Optional: also increase this
+        height={80}
+        className="w-full hover:scale-110 transition-all duration-300 ease-in-out"
+      />
+     </a>
 
       {/* Mobile Hamburger */}
       <div className="fixed top-6 right-6 xl:hidden flex items-center justify-end z-50">

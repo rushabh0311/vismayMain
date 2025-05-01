@@ -1,64 +1,52 @@
-"use client";
-import React, { useState, useEffect } from "react";
+"use client"; // Add this at the top of the file
 
-export default function Timer() {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+import { useState, useEffect } from "react";
 
-  const deadline = "2024-03-28T00:00:00";
+const Countdown = () => {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const updateTimeLeft = () => {
-      const time = Date.parse(deadline) - new Date().getTime();
-      if (time < 0) {
-        // Stop the countdown once the deadline has passed
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+    const targetDate = new Date("2025-06-06T00:00:00"); // Set the target date for the countdown
+
+    const interval = setInterval(() => {
+      const currentTime = new Date();
+      const timeDifference = targetDate - currentTime;
+
+      if (timeDifference <= 0) {
+        clearInterval(interval);
         return;
       }
 
-      const days = Math.floor(time / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((time / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((time / 1000 / 60) % 60);
-      const seconds = Math.floor((time / 1000) % 60);
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
       setTimeLeft({ days, hours, minutes, seconds });
-    };
+    }, 1000);
 
-    const interval = setInterval(updateTimeLeft, 1000);
-
-    // Cleanup the interval on component unmount
-    return () => clearInterval(interval);
-  }, [deadline]);
-
-  // Destructure timeLeft for easier use in the JSX
-  const { days, hours, minutes, seconds } = timeLeft;
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
 
   return (
-    <div
-      className="flex justify-center items-center gap-3 md:gap-4 lg:gap-6 py-3 px-3 
-        md:px-8 lg:px-10 border-2 border-[rgba(255,255,255,0.6)] rounded-[9.375rem] 
-        h-12 bg-[#363636]"
-    >
-      {[
-        { value: days, label: "D" },
-        { value: hours, label: "H" },
-        { value: minutes, label: "M" },
-        { value: seconds, label: "S" },
-      ].map((item, index) => (
-        <div key={index} className="flex justify-center items-start">
-          <p
-            className="text-[#FAF8ED] text-[1rem] sm:text-[1.25rem] lg:text-[1.5rem] 
-              font-normal"
-          >
-            {item.value}
-            <span>{item.label}</span>
-          </p>
+    <div className="text-center text-[#FAF8ED]">
+      <p className="text-lg font-medium">Event starts in:</p>
+      <div className="flex justify-center gap-4 mt-4">
+        <div className="bg-[#FAF8ED] text-black px-6 py-2 rounded-lg">
+          {timeLeft.days} <span className="block text-sm">Days</span>
         </div>
-      ))}
+        <div className="bg-[#FAF8ED] text-black px-6 py-2 rounded-lg">
+          {timeLeft.hours} <span className="block text-sm">Hours</span>
+        </div>
+        <div className="bg-[#FAF8ED] text-black px-6 py-2 rounded-lg">
+          {timeLeft.minutes} <span className="block text-sm">Minutes</span>
+        </div>
+        <div className="bg-[#FAF8ED] text-black px-6 py-2 rounded-lg">
+          {timeLeft.seconds} <span className="block text-sm">Seconds</span>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default Countdown;

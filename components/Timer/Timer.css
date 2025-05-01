@@ -1,0 +1,40 @@
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .countdown-item {
+    background-color: #faf8ed;
+    color: black;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .countdown-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .countdown-item span {
+    font-size: 0.8rem;
+    display: block;
+  }
+  

@@ -38,9 +38,9 @@ const Gallery = () => {
               className="w-full xl:max-w-[75%] text-[#C3C3C3] font-[Inter] 
                 text-center font-normal text-[1.25rem] md:text-[1.5rem]"
             >
-              Explore our gallery of memorable moments from HackByte 2.0 event at
-              IIITDMJ. Immerse in the vibrant coding community, witness
-              innovation, and get inspired.
+              Explore our gallery of unforgettable moments from Vismay at Govt Medical College,Miraj. Dive into the world of creativity, experience groundbreaking innovations, and get inspired by the next wave of talent."
+
+Feel free to customize it further!
             </p>
           </div>
         </div>
@@ -64,24 +64,52 @@ const Gallery = () => {
           </div>
         </div>
       </div>
-      <div className="bg-black w-full h-full py-24 lg:py-40">
-        <div
-          className="flex flex-col justify-between gap-20 md:flex-row 
-          px-4 md:px-8 xl:px-20 2xl:px-40"
-        >
-          <p
-            className="max-w-3xl text-6xl md:text-[5.5rem] lg:text-[7rem] xl:text-[9rem] 
-              text-white font-normal md:leading-[8rem] lg:leading-[10rem] 
-              tracking-tighter md:tracking-[-0.2rem]"
-          >
-            Empower
-            <br /> Your Digital
-            <br /> Odyssey!
+       <div className="relative bg-black w-full h-screen flex flex-col justify-end pt-48 md:pt-52 lg:pt-72">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-16 md:gap-20 px-6 md:px-12 xl:px-24 py-20">
+          
+          <p className="max-w-4xl text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-extrabold leading-tight text-center md:text-left tracking-tight">
+            <span 
+              className="block bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]"
+              style={{
+                backgroundImage: "url('/mmm background.jpg')", // parchment image
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                filter: "brightness(1.4)", // Make parchment brighter
+                WebkitTextStroke: "1px #f5deb3", // Light wheat-colored stroke
+              }}
+            >
+              Myth
+            </span>
+            <span 
+              className="block bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]"
+              style={{
+                backgroundImage: "url('/mmm background.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                filter: "brightness(1.4)",
+                WebkitTextStroke: "1px #f5deb3",
+              }}
+            >
+              Maya
+            </span>
+            <span 
+              className="block bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]"
+              style={{
+                backgroundImage: "url('/mmm background.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                filter: "brightness(1.4)",
+                WebkitTextStroke: "1px #f5deb3",
+              }}
+            >
+              Mystery!
+            </span>
           </p>
-
+      
           <FooterAnimation />
+      
         </div>
-      </div>
+              </div>
       <Footer />
     </>
   );

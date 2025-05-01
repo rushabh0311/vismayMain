@@ -1,12 +1,31 @@
 .rotatingContainer {
-  animation: rotateAnimation 8s linear infinite;
+  animation: dynamicMovement 8s ease-in-out infinite;
 }
 
-@keyframes rotateAnimation {
+@keyframes dynamicMovement {
   0% {
-    transform: rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
+    background-color: #3498db;
+    opacity: 1;
+  }
+  25% {
+    transform: translate(100px, 50px) rotate(90deg);
+    background-color: #e74c3c;
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-100px, -50px) rotate(180deg);
+    background-color: #f39c12;
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate(50px, -100px) rotate(270deg);
+    background-color: #2ecc71;
+    opacity: 0.4;
   }
   100% {
-    transform: rotate(360deg);
+    transform: translate(0, 0) rotate(360deg);
+    background-color: #9b59b6;
+    opacity: 1;
   }
 }
